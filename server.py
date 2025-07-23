@@ -3,7 +3,8 @@ import os
 import base64
 import json
 from werkzeug.security import generate_password_hash, check_password_hash
-
+from dotenv import load_dotenv
+load_dotenv()
 from selenium import webdriver as wb
 from selenium.webdriver.common.by import By
 from selenium.webdriver.common.keys import Keys
@@ -49,9 +50,9 @@ def detect_faces(photo_path):
     return emotion_colors, gender
 
 def get_weather_and_season():
-    API_KEY_W = "6b0189c97b93e4ac2c994c084954eb3a"
+    OPENWEATHER_API_KEY = os.getenv("OPENWEATHER_API_KEY")
     city_name = "seoul"
-    url_current_weather = f"https://api.openweathermap.org/data/2.5/weather?q={city_name}&appid={API_KEY_W}&units=metric"
+    url_current_weather = f"https://api.openweathermap.org/data/2.5/weather?q={city_name}&appid={OPENWEATHER_API_KEY}&units=metric"
 
     response = requests.get(url_current_weather)
     result = response.json()
