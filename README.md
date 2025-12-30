@@ -68,8 +68,11 @@
 ```
 
 ### 📊 착장 예보 홈페이지 출력 화면
-![StyleCast UI_spring](./images/spring.png)
-![StyleCast UI](./images/main.png)
+<p align="center">
+  <img src="./images/spring.png" width="400">
+  <img src="./images/main.png" width="400">
+</p>
+
 
 ---
 
